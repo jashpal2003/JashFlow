@@ -1,0 +1,51 @@
+.App {
+    min-height: 100vh;
+    background: var(--bg-dark-primary);
+}
+
+main {
+    position: relative;
+}
+
+/* Smooth scroll offset for anchor links */
+html {
+    scroll-padding-top: 80px;
+}
+
+/* Selection color */
+::selection {
+    background: var(--accent-purple);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--accent-purple);
+    color: white;
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-purple);
+    outline-offset: 4px;
+}
+
+/* Loading animation (optional) */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.loading {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right,
+            var(--bg-dark-secondary) 4%,
+            var(--bg-dark-tertiary) 25%,
+            var(--bg-dark-secondary) 36%);
+    background-size: 1000px 100%;
+}
