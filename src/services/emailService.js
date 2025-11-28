@@ -1,6 +1,23 @@
+import emailjs from '@emailjs/browser';
+
+// EmailJS Configuration - YOUR CREDENTIALS
+const EMAILJS_CONFIG = {
+    serviceId: 'service_gu9hm57',
+    publicKey: '2ldC_iv3ZWG7T226s',
+    templates: {
+        booking: 'template_e6nmk5k',
+        contact: 'template_e6nmk5k',
+        newsletter: 'template_e6nmk5k',
+    },
+};
+
+// Initialize EmailJS with your public key
+emailjs.init(EMAILJS_CONFIG.publicKey);
+
+/**
  * Send demo booking confirmation email
-    * @param { Object } bookingData - Booking information
-        * @returns { Promise }
+ * @param {Object} bookingData - Booking information
+ * @returns {Promise}
  */
 export const sendBookingConfirmation = async (bookingData) => {
     try {
